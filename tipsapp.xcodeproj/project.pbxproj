@@ -275,6 +275,7 @@
 				TargetAttributes = {
 					43DFD7381E67BC2E0066CE36 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 49CYRV9CPL;
 						ProvisioningStyle = Automatic;
 					};
 					43DFD74C1E67BC2F0066CE36 = {
@@ -552,6 +553,7 @@
 			baseConfigurationReference = 1F6DBFBBDC62F59D7A9F6A01 /* Pods-tipsapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 49CYRV9CPL;
 				INFOPLIST_FILE = tipsapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
@@ -567,6 +569,7 @@
 			baseConfigurationReference = 4BA33C6953CCB8BC94BC208B /* Pods-tipsapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 49CYRV9CPL;
 				INFOPLIST_FILE = tipsapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";

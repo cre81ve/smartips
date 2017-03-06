@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="a3a-UR-Xl1">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="a3a-UR-Xl1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eNT-su-jq6" customClass="FUITextField">
-                                <rect key="frame" x="147" y="169" width="190" height="30"/>
+                                <rect key="frame" x="146" y="199" width="190" height="30"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NxJ-x1-Rcy"/>
@@ -33,7 +33,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="S7p-zB-MIR" customClass="FUISegmentedControl">
-                                <rect key="frame" x="34" y="283" width="307" height="29"/>
+                                <rect key="frame" x="34" y="325" width="307" height="29"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="7lO-ai-j9t"/>
@@ -51,7 +51,7 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCM-S3-zfs">
-                                <rect key="frame" x="33" y="212" width="86" height="24"/>
+                                <rect key="frame" x="33" y="245" width="86" height="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="86" id="IOh-it-9zc"/>
@@ -62,7 +62,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="eDT-qx-KWC" customClass="PersonSlider" customModule="tipsapp" customModuleProvider="target">
-                                <rect key="frame" x="31" y="354" width="307" height="31"/>
+                                <rect key="frame" x="34" y="383" width="307" height="31"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -70,7 +70,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$20.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lka-Eb-XhW">
-                                <rect key="frame" x="146.5" y="214" width="188" height="21"/>
+                                <rect key="frame" x="147" y="245" width="188" height="21"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="188" id="3S4-IQ-BGW"/>
@@ -81,7 +81,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lED-mW-wgG">
-                                <rect key="frame" x="33" y="172" width="78" height="24"/>
+                                <rect key="frame" x="34" y="202" width="78" height="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="AcL-cV-8Sb"/>
@@ -91,23 +91,22 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUX-ij-E0y">
-                                <rect key="frame" x="6" y="80" width="362" height="70"/>
-                                <color key="backgroundColor" red="0.26025623819999999" green="0.35588515230000001" blue="0.25849414549999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="362" id="5qA-0L-RT2"/>
-                                    <constraint firstAttribute="height" constant="70" id="Srp-SH-mjW"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="W7E-2c-utq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAJ-9U-GWg">
-                                <rect key="frame" x="6" y="429" width="362" height="230"/>
+                                <rect key="frame" x="6" y="442" width="362" height="217"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Typical Wait Staff around 15-20 % is the norm   pre - tax bill. Well !! game theory says tip , only if you prefer to come back. (You ll come back if you like it , and obviously you ll tip) </string>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUX-ij-E0y">
+                                <rect key="frame" x="6" y="72" width="362" height="100"/>
+                                <color key="backgroundColor" red="0.26025623819999999" green="0.35588515230000001" blue="0.25849414549999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="362" id="5qA-0L-RT2"/>
+                                    <constraint firstAttribute="height" constant="100" id="Srp-SH-mjW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -116,33 +115,33 @@
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <rect key="contentStretch" x="0.0" y="0.0" width="0.40000000000000002" height="1"/>
                         <constraints>
-                            <constraint firstItem="aCM-S3-zfs" firstAttribute="top" secondItem="lED-mW-wgG" secondAttribute="bottom" constant="16" id="1fg-N4-YNO"/>
+                            <constraint firstItem="aCM-S3-zfs" firstAttribute="top" secondItem="lED-mW-wgG" secondAttribute="bottom" constant="19" id="1fg-N4-YNO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LUX-ij-E0y" secondAttribute="trailing" constant="-9" id="2Ni-FI-kYk"/>
-                            <constraint firstItem="eNT-su-jq6" firstAttribute="trailing" secondItem="eDT-qx-KWC" secondAttribute="trailing" constant="1" id="3b5-Xx-NWg"/>
+                            <constraint firstItem="eNT-su-jq6" firstAttribute="trailing" secondItem="eDT-qx-KWC" secondAttribute="trailing" constant="-3" id="3b5-Xx-NWg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LUX-ij-E0y" secondAttribute="trailing" constant="-9" id="4gk-IA-1dh"/>
-                            <constraint firstItem="lED-mW-wgG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="7UT-tp-D1f"/>
+                            <constraint firstItem="lED-mW-wgG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="18" id="7UT-tp-D1f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Lka-Eb-XhW" secondAttribute="trailing" constant="24.5" id="8Z5-tU-8Gg"/>
-                            <constraint firstItem="yAJ-9U-GWg" firstAttribute="top" secondItem="eDT-qx-KWC" secondAttribute="bottom" constant="45" id="8qZ-Xe-Ja2"/>
-                            <constraint firstItem="eDT-qx-KWC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="90H-9v-AOb"/>
-                            <constraint firstItem="LUX-ij-E0y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="AJU-GU-l48"/>
+                            <constraint firstItem="yAJ-9U-GWg" firstAttribute="top" secondItem="eDT-qx-KWC" secondAttribute="bottom" constant="29" id="8qZ-Xe-Ja2"/>
+                            <constraint firstItem="eDT-qx-KWC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="90H-9v-AOb"/>
+                            <constraint firstItem="LUX-ij-E0y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="AJU-GU-l48"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yAJ-9U-GWg" secondAttribute="trailing" constant="-9" id="Bke-Tr-Rn2"/>
                             <constraint firstItem="Lka-Eb-XhW" firstAttribute="leading" secondItem="aCM-S3-zfs" secondAttribute="trailing" constant="27.5" id="CXb-RS-5eb"/>
-                            <constraint firstItem="eNT-su-jq6" firstAttribute="top" secondItem="LUX-ij-E0y" secondAttribute="bottom" constant="19" id="DoG-Sy-Opf"/>
+                            <constraint firstItem="eNT-su-jq6" firstAttribute="top" secondItem="LUX-ij-E0y" secondAttribute="bottom" constant="27" id="DoG-Sy-Opf"/>
                             <constraint firstItem="aCM-S3-zfs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="MsR-sv-g8Q"/>
-                            <constraint firstItem="S7p-zB-MIR" firstAttribute="top" secondItem="aCM-S3-zfs" secondAttribute="bottom" constant="47" id="O8c-OQ-aL1"/>
+                            <constraint firstItem="S7p-zB-MIR" firstAttribute="top" secondItem="aCM-S3-zfs" secondAttribute="bottom" constant="56" id="O8c-OQ-aL1"/>
                             <constraint firstItem="LUX-ij-E0y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="OJl-m4-xjy"/>
-                            <constraint firstItem="eDT-qx-KWC" firstAttribute="top" secondItem="S7p-zB-MIR" secondAttribute="bottom" constant="43" id="RJW-LF-l82"/>
+                            <constraint firstItem="eDT-qx-KWC" firstAttribute="top" secondItem="S7p-zB-MIR" secondAttribute="bottom" constant="30" id="RJW-LF-l82"/>
                             <constraint firstItem="S7p-zB-MIR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="18" id="S8d-te-HiD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eNT-su-jq6" secondAttribute="trailing" constant="22" id="TCB-cU-4BU"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eDT-qx-KWC" secondAttribute="bottom" constant="283" id="XGa-wz-eAE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eNT-su-jq6" secondAttribute="trailing" constant="23" id="TCB-cU-4BU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eDT-qx-KWC" secondAttribute="bottom" constant="254" id="XGa-wz-eAE"/>
                             <constraint firstItem="yAJ-9U-GWg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="Y8E-Rc-R0J"/>
-                            <constraint firstItem="eDT-qx-KWC" firstAttribute="top" secondItem="S7p-zB-MIR" secondAttribute="bottom" constant="43" id="Z15-iG-rxH"/>
+                            <constraint firstItem="eDT-qx-KWC" firstAttribute="top" secondItem="S7p-zB-MIR" secondAttribute="bottom" constant="30" id="Z15-iG-rxH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="S7p-zB-MIR" secondAttribute="trailing" constant="18" id="fDL-Qu-qQS"/>
-                            <constraint firstItem="lED-mW-wgG" firstAttribute="top" secondItem="LUX-ij-E0y" secondAttribute="bottom" constant="22" id="kjo-k4-WAJ"/>
-                            <constraint firstItem="S7p-zB-MIR" firstAttribute="top" secondItem="Lka-Eb-XhW" secondAttribute="bottom" constant="48" id="qVm-Hy-LgQ"/>
-                            <constraint firstItem="eNT-su-jq6" firstAttribute="leading" secondItem="lED-mW-wgG" secondAttribute="trailing" constant="36" id="rYU-15-XKd"/>
+                            <constraint firstItem="lED-mW-wgG" firstAttribute="top" secondItem="LUX-ij-E0y" secondAttribute="bottom" constant="30" id="kjo-k4-WAJ"/>
+                            <constraint firstItem="S7p-zB-MIR" firstAttribute="top" secondItem="Lka-Eb-XhW" secondAttribute="bottom" constant="59" id="qVm-Hy-LgQ"/>
+                            <constraint firstItem="eNT-su-jq6" firstAttribute="leading" secondItem="lED-mW-wgG" secondAttribute="trailing" constant="34" id="rYU-15-XKd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yAJ-9U-GWg" secondAttribute="bottom" constant="8" id="vf0-CY-rts"/>
-                            <constraint firstItem="Lka-Eb-XhW" firstAttribute="top" secondItem="eNT-su-jq6" secondAttribute="bottom" constant="15" id="x9R-ga-oP1"/>
+                            <constraint firstItem="Lka-Eb-XhW" firstAttribute="top" secondItem="eNT-su-jq6" secondAttribute="bottom" constant="16" id="x9R-ga-oP1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tip Calculator" id="3qT-Pe-r1S">
@@ -209,7 +208,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="partialCurl" id="a3a-UR-Xl1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="KlA-Kt-Hsl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KlA-Kt-Hsl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
