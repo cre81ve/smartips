@@ -12,6 +12,9 @@ import FlatUIKit
 
 class Styles {
     
+    class func themeColor()->UIColor {
+        return Store.styleColor()
+    }
     
     class func styleText(tf:FUITextField)  {
         //text style
@@ -24,7 +27,7 @@ class Styles {
 
     class func styleSlider(slider:UISlider)  {
         slider.isContinuous = true
-        slider.configureFlatSlider(withTrackColor: UIColor.silver(), progressColor: UIColor.alizarin(), thumbColor: UIColor.pomegranate())
+        slider.configureFlatSlider(withTrackColor: UIColor.silver(), progressColor: UIColor.alizarin(), thumbColor: Styles.themeColor())
 
     }
 
@@ -34,11 +37,20 @@ class Styles {
         segmentControl.selectedFontColor = UIColor.clouds()
         segmentControl.deselectedFont = UIFont.flatFont(ofSize: 16)
         segmentControl.deselectedFontColor = UIColor.darkGray
-        segmentControl.selectedColor = UIColor.pomegranate()
+        segmentControl.selectedColor = Styles.themeColor()
         segmentControl.deselectedColor = UIColor.clouds()
         segmentControl.dividerColor = UIColor.midnightBlue()
         segmentControl.cornerRadius = 5.0;
 
+    }
+    
+    class func styleNav(controller:UIViewController) {
+        controller.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : Styles.themeColor()]
+        controller.navigationItem.backBarButtonItem?.tintColor = Styles.themeColor()
+        controller.navigationItem.backBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName : Styles.themeColor()]
+            , for: UIControlState.normal)
+        controller.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName : Styles.themeColor()]
+            , for: UIControlState.normal)
     }
 
     class func styleLabels(label:UILabel)  {

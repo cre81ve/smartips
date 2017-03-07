@@ -41,13 +41,8 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         
         super.viewDidLoad()
         
-        Styles.styleSlider(slider: personSlider)
-        Styles.styleText(tf: billAmount);
-        Styles.styleSegmentControl(segmentControl: segmentControl)
-        Styles.styleLabels(label: tipLabel)
-        Styles.styleLabels(label: billLabel)
-        Styles.styleLabels(label: tipAmount)
-//        serviceDetail.backgroundColor = UIColor.greenSea()
+        //styles
+        reStyle()
         
         billAmount.delegate = self
         billAmount.addTarget(self, action: #selector(HomeViewController.didBillValueChange), for: UIControlEvents.editingChanged)
@@ -62,15 +57,19 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         
         service.backgroundColor = UIColor.clear
         serviceDetail.backgroundColor = UIColor.clear
+
         //formatter
         formatter.numberStyle = .currency
-        
+
         recalculateTip(fromTextField: false)
+        
     }
     
     
+    
+    
     override func viewDidAppear(_ animated: Bool) {
-//        segmentControl = FUISegmentedControl(items: Store.segmentTip)
+
         segmentControl.removeAllSegments()
         segmentControl.insertSegment(withTitle: Store.segmentTip[0], at: 0, animated: true)
         segmentControl.insertSegment(withTitle: Store.segmentTip[1], at: 1, animated: true)
@@ -81,21 +80,28 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         tipPercent = Float(tipPercentVar)!
         service.text = Store.service
         serviceDetail.text = Store.serviceDetail
+
         self.service.alpha = 0.7
-//        self.serviceDetail.alpha = 0.0
-        recalculateTip(fromTextField: false)
         UIView.animate(withDuration: 1.0, delay: 0.3, options: UIViewAnimationOptions.curveEaseOut, animations: {
-            self.service.backgroundColor = UIColor.pomegranate()
-            self.serviceDetail.backgroundColor = UIColor.pomegranate()
+            self.service.backgroundColor = Styles.themeColor()
+            self.serviceDetail.backgroundColor = Styles.themeColor()
             self.service.alpha = 1.0
-//            self.serviceDetail.alpha = 1.0
         })
-        // self.service.backgroundColor = UIColor.pomegranate()
-        self.serviceDetail.backgroundColor = UIColor.pomegranate()
-//        self.view.layer.borderColor = UIColor.pomegranate().cgColor
-//        self.view.layer.borderWidth = 10.0
+        self.serviceDetail.backgroundColor = Styles.themeColor()
+        reStyle()
+        recalculateTip(fromTextField: false)
+        Styles.styleNav(controller: self)
     }
     
+    func reStyle() {
+        Styles.styleSlider(slider: personSlider)
+        Styles.styleText(tf: billAmount);
+        Styles.styleSegmentControl(segmentControl: segmentControl)
+        Styles.styleLabels(label: tipLabel)
+        Styles.styleLabels(label: billLabel)
+        Styles.styleLabels(label: tipAmount)
+
+    }
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.keyboardAppearance = UIKeyboardAppearance.alert
     }
@@ -158,7 +164,6 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         tipLabel.text = "Tip (\(sharedBy))"
         tip = (bill/100.00)*tipPercent
    
-//        formatter.currencyGroupingSeparator = ""
         //change Bill & Tip
         let billToShow:Float = bill/Float(sharedBy)
         if(!fromTextField) {

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 class Store {
     
@@ -21,6 +21,28 @@ class Store {
         segmentTip = segmentTipArray
     }
     
+    
+    class func setStyleColor(color:String) {
+        let defaults = UserDefaults.standard
+        defaults.set(color, forKey: "styleColor")
+    }
+    
+    class func styleColor()->UIColor {
+        let defaults = UserDefaults.standard
+        let color:String! = defaults.string(forKey: "styleColor")
+        if(color != nil) {
+            switch color {
+                case "p" : return UIColor.pomegranate()
+                case "g" : return UIColor.greenSea()
+                case "b" : return UIColor.belizeHole()
+                default : return UIColor.pomegranate()
+            }
+        }
+        else {
+            return UIColor.pomegranate()
+        }
+        
+    }
     
     
 }

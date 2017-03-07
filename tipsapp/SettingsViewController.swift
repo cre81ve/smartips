@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController ,UITableViewDelegate,UITableViewD
 
     @IBOutlet weak var settingsTable: UITableView!
     let sections: [String] = ["Settings", "Services"]
-    let appSettings: [String] = ["Theme", "Default Share", "Save History"]
+    let appSettings: [String] = ["Theme", "Save History"]
     let services: [String] = ["Waiters", "Bartenders", "Car Washers" ,"Delivery" ,"Hair Salon", "Nails/Spa" , "Movers", "Massage", "Room Service/House Keeping","Gardeners","Baby Sitters"]
 //    let s3Data: [String] = ["Row 1", "Row 2", "Row 3"]
     
@@ -44,8 +44,14 @@ class SettingsViewController: UIViewController ,UITableViewDelegate,UITableViewD
         
         let indexPath:IndexPath = IndexPath(row: 2, section: 1)
         settingsTable.selectRow(at: indexPath, animated: true, scrollPosition: UITableViewScrollPosition.bottom)
+        self.settingsTable.rowHeight = UITableViewAutomaticDimension;
+        self.settingsTable.estimatedRowHeight = 44.0
+
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        Styles.styleNav(controller: self)
+    }
     
     func sortFunc(num1: Int, num2: Int) -> Bool {
         return num1 < num2
@@ -81,29 +87,44 @@ class SettingsViewController: UIViewController ,UITableViewDelegate,UITableViewD
     }
     
     
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if(indexPath.section == 0) {
+//         return 46
+//        }
+//        return  40
+//    }
+//    
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header:UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         header.textLabel?.font = UIFont(name: "Avenir Next", size: 18)
         header.textLabel?.textColor = UIColor.white
-        view.tintColor = UIColor.pomegranate()
+        view.tintColor = Styles.themeColor()
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
         -> UITableViewCell {
-            var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-            
-            if cell == nil {
-                cell = UITableViewCell(style: .default, reuseIdentifier: "cell");
+            var cell = UITableViewCell(style: .default, reuseIdentifier: "cell");
+            if(indexPath.section == 0 )
+            {
+                if(indexPath.row == 0) {
+                    cell = tableView.dequeueReusableCell(withIdentifier: "settingscell") as! SettingsCell
+                    cell.backgroundColor = UIColor.lightGray
+                }
+                if(indexPath.row == 1) {
+                     cell = tableView.dequeueReusableCell(withIdentifier: "savecell") as! ShareCell
+                }
+              cell.selectionStyle = UITableViewCellSelectionStyle.none
+
+            }else{
+                cell.textLabel?.text = sectionData[indexPath.section]![indexPath.row]
             }
+            cell.configureFlatCell(with: UIColor.white, selectedColor: UIColor.gray)
+            cell.cornerRadius = 5.0;
+            cell.separatorHeight = 1.0;
+            cell.textLabel?.font = UIFont(name: "Avenir Next", size: 16)
             
-            cell!.textLabel?.text = sectionData[indexPath.section]![indexPath.row]
-            cell!.configureFlatCell(with: UIColor.white, selectedColor: UIColor.gray)
-            cell!.cornerRadius = 5.0;
-            cell!.separatorHeight = 1.0;
-            cell!.textLabel?.font = UIFont(name: "Avenir Next", size: 16)
-            
-            return cell!
+            return cell
     }
     
     
