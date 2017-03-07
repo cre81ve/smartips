@@ -11,7 +11,7 @@
 - [x] Used user defaults to store theme setting.
 - [x] **Animation** used for selected service - alpha fade.
 - [x] Regional Settings formats used for Currency and Money.
-- [x] Integrated pods - FlatUIKit , mainly for Color extensions.
+- [x] Integrated pods - [FlatUIKit](https://github.com/Grouper/FlatUIKit/) , mainly for Color extensions.
 
 
 ### Recorded main app 
