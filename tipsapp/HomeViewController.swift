@@ -60,6 +60,8 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         currencySymbol = NSLocale.current.currencySymbol! as String
         billAmount.placeholder = currencySymbol + String(format:"%.2f", bill)
         
+        service.backgroundColor = UIColor.clear
+        serviceDetail.backgroundColor = UIColor.clear
         //formatter
         formatter.numberStyle = .currency
         
@@ -79,14 +81,19 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         tipPercent = Float(tipPercentVar)!
         service.text = Store.service
         serviceDetail.text = Store.serviceDetail
+        self.service.alpha = 0.7
+//        self.serviceDetail.alpha = 0.0
         recalculateTip(fromTextField: false)
-        
-        service.backgroundColor = UIColor.clear
-        serviceDetail.backgroundColor = UIColor.clear
-        UIView.animate(withDuration: 2.0) {
+        UIView.animate(withDuration: 1.0, delay: 0.3, options: UIViewAnimationOptions.curveEaseOut, animations: {
             self.service.backgroundColor = UIColor.pomegranate()
             self.serviceDetail.backgroundColor = UIColor.pomegranate()
-        }
+            self.service.alpha = 1.0
+//            self.serviceDetail.alpha = 1.0
+        })
+        // self.service.backgroundColor = UIColor.pomegranate()
+        self.serviceDetail.backgroundColor = UIColor.pomegranate()
+//        self.view.layer.borderColor = UIColor.pomegranate().cgColor
+//        self.view.layer.borderWidth = 10.0
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
