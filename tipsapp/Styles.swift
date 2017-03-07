@@ -27,7 +27,7 @@ class Styles {
 
     class func styleSlider(slider:UISlider)  {
         slider.isContinuous = true
-        slider.configureFlatSlider(withTrackColor: UIColor.silver(), progressColor: UIColor.alizarin(), thumbColor: Styles.themeColor())
+        slider.configureFlatSlider(withTrackColor: UIColor.silver(), progressColor: Styles.themeColor(), thumbColor: Styles.themeColor())
 
     }
 
