@@ -14,5 +14,8 @@
 - [x] Integrated pods - FlatUIKit , mainly for Color extensions.
 
 
-##### Recorded main app 
-!(https://github.com/cre81ve/smartips/blob/master/tips1.gif)
+### Recorded main app 
+![](https://github.com/cre81ve/smartips/blob/master/tips1.gif)
+### Recorded auto layout for app 
+![](https://github.com/cre81ve/smartips/blob/master/tips_autolayout.gif)
+
