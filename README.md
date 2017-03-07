@@ -15,4 +15,4 @@
 
 
 ##### Recorded main app 
-(https://github.com/cre81ve/smartips/blob/master/tips1.gif)
+!(https://github.com/cre81ve/smartips/blob/master/tips1.gif)
