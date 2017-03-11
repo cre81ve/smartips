@@ -26,17 +26,28 @@ class SettingsCell: UITableViewCell {
        
         let defaults = UserDefaults.standard
         let color:String! = defaults.string(forKey: "styleColor")
+        pomegranate.layer.borderColor = UIColor.pomegranate().cgColor
+        greenSea.layer.borderColor = UIColor.greenSea().cgColor
+        belizeHole.layer.borderColor = UIColor.belizeHole().cgColor
+
         if(color == nil) {
             Store.setStyleColor(color: "p")
+            pomegranate.layer.borderColor = Styles.darkerColorForColor(c: UIColor.pomegranate()).cgColor
+
         }
         else {
             switch color {
-            case "p" :  pomegranate.setTitle("*", for: UIControlState.normal)
-            case "g" :  greenSea.setTitle("*", for: UIControlState.normal)
-            case "b" :  belizeHole.setTitle("*", for: UIControlState.normal)
-            default :  pomegranate.setTitle("*", for: UIControlState.normal)
+            case "p" :  pomegranate.layer.borderColor = Styles.darkerColorForColor(c: UIColor.pomegranate()).cgColor
+            case "g" :  greenSea.layer.borderColor = Styles.darkerColorForColor(c: UIColor.greenSea()).cgColor
+            case "b" :  belizeHole.layer.borderColor = Styles.darkerColorForColor(c: UIColor.belizeHole()).cgColor
+            default :  pomegranate.layer.borderColor = Styles.darkerColorForColor(c: UIColor.pomegranate()).cgColor
             }
         }
+        
+        greenSea.layer.borderWidth = 3.0
+        pomegranate.layer.borderWidth = 3.0
+        belizeHole.layer.borderWidth = 3.0
+
         
     }
 
@@ -47,23 +58,26 @@ class SettingsCell: UITableViewCell {
     }
 
     @IBAction func gs(_ sender: Any) {
-        greenSea.setTitle("*", for: UIControlState.normal)
-        pomegranate.setTitle("", for: UIControlState.normal)
-        belizeHole.setTitle("", for: UIControlState.normal)
+        greenSea.layer.borderColor = Styles.darkerColorForColor(c: UIColor.greenSea()).cgColor
+        pomegranate.layer.borderColor = UIColor.pomegranate().cgColor
+        belizeHole.layer.borderColor = UIColor.belizeHole().cgColor
         Store.setStyleColor(color: "g")
     }
+    
+    
     @IBAction func pom(_ sender: Any) {
-        greenSea.setTitle("", for: UIControlState.normal)
-        pomegranate.setTitle("*", for: UIControlState.normal)
-        belizeHole.setTitle("", for: UIControlState.normal)
+        greenSea.layer.borderColor = UIColor.greenSea().cgColor
+        pomegranate.layer.borderColor = Styles.darkerColorForColor(c: UIColor.pomegranate()).cgColor
+        belizeHole.layer.borderColor = UIColor.belizeHole().cgColor
         Store.setStyleColor(color: "p")
 
     }
 
     @IBAction func blz(_ sender: Any) {
-        greenSea.setTitle("", for: UIControlState.normal)
-        pomegranate.setTitle("", for: UIControlState.normal)
-        belizeHole.setTitle("*", for: UIControlState.normal)
+        greenSea.layer.borderColor = UIColor.greenSea().cgColor
+        pomegranate.layer.borderColor = UIColor.pomegranate().cgColor
+        belizeHole.layer.borderColor = Styles.darkerColorForColor(c: UIColor.belizeHole()).cgColor
+        belizeHole.layer.borderWidth = 3.0
         Store.setStyleColor(color: "b")
 
     }

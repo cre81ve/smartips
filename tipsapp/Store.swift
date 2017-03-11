@@ -14,7 +14,10 @@ class Store {
     static var serviceDetail:String! = "Typical Waiters around 15 - 30 % is the norm   pre - tax bill. Well !! game theory says tip , only if you prefer to come back. (You ll come back if you like it , and obviously you ll tip)"
     static var service:String = "Waiters"
     static var segmentTip:[String] = ["15%","20%","30%"]
-    
+    static let sections: [String] = ["Settings", "Services"]
+    static let appSettings: [String] = ["Theme", "Save History"]
+    static let services: [String] = ["Waiters", "Bartenders", "Car Washers" ,"Delivery" ,"Hair Salon", "Nails/Spa" , "Movers", "Massage", "Room Service/House Keeping","Gardeners","Baby Sitters"]
+
     class func storeDefaultServiceDetails(serviceArg:String , serviceDetailArg:String , segmentTipArray:[String] ) {
         serviceDetail = serviceDetailArg
         service = serviceArg

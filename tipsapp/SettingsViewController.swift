@@ -11,9 +11,6 @@ import UIKit
 class SettingsViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var settingsTable: UITableView!
-    let sections: [String] = ["Settings", "Services"]
-    let appSettings: [String] = ["Theme", "Save History"]
-    let services: [String] = ["Waiters", "Bartenders", "Car Washers" ,"Delivery" ,"Hair Salon", "Nails/Spa" , "Movers", "Massage", "Room Service/House Keeping","Gardeners","Baby Sitters"]
 //    let s3Data: [String] = ["Row 1", "Row 2", "Row 3"]
     
     var sectionData: [Int: [String]] = [:]
@@ -24,13 +21,14 @@ class SettingsViewController: UIViewController ,UITableViewDelegate,UITableViewD
         super.viewDidLoad()
         settingsTable.delegate  = self
         settingsTable.dataSource = self
-        sectionData = [0:appSettings , 1:services ]
+        
+        sectionData = [0:Store.appSettings , 1:Store.services ]
         let lower : UInt32 = 5
         let upper : UInt32 = 30
         
         //randomly generating temporarily. 
         //TODO: with actual helpful tip as a service.
-        for service in services {
+        for service in Store.services {
            var numbers = [arc4random_uniform(upper - lower) + lower ,arc4random_uniform(upper - lower) + lower,arc4random_uniform(upper - lower) + lower]
            numbers.sort()
             serviceAndTips[service] = numbers.map({ (val) -> String! in
@@ -38,7 +36,7 @@ class SettingsViewController: UIViewController ,UITableViewDelegate,UITableViewD
             })
         }
         
-        for service in services {
+        for service in Store.services {
             serviceAndDescriptions[service] = "Typical \(service) around [ \((serviceAndTips[service]?[0] )!) - \((serviceAndTips[service]?[2])!) ] is the norm   pre - tax bill. Well !! game theory says tip , only if you prefer to come back. (You ll come back if you like it , and you ll tip) "
         }
         
@@ -69,16 +67,16 @@ class SettingsViewController: UIViewController ,UITableViewDelegate,UITableViewD
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int)
         -> String? {
-            return sections[section]
+            return Store.sections[section]
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return Store.sections.count
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedService:String = services[indexPath.item]
+        let selectedService:String = Store.services[indexPath.item]
         Store.storeDefaultServiceDetails(serviceArg: selectedService, serviceDetailArg: serviceAndDescriptions[selectedService]!, segmentTipArray: serviceAndTips[selectedService]!)
     }
     

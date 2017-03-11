@@ -179,7 +179,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="luc-9k-RYN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="luc-9k-RYN">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -187,13 +187,13 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O3N-hH-vZz" id="95X-oJ-1O9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtF-Db-cw2">
-                                                    <rect key="frame" x="14" y="17" width="95" height="21"/>
+                                                    <rect key="frame" x="14" y="17" width="141" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="95" id="ABO-Pc-AsA"/>
+                                                        <constraint firstAttribute="width" constant="141" id="ABO-Pc-AsA"/>
                                                         <constraint firstAttribute="height" constant="21" id="aNv-9T-1mR"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
@@ -251,7 +251,7 @@
                                                 <constraint firstItem="WCr-LR-mwf" firstAttribute="leading" secondItem="VIE-WK-U7O" secondAttribute="trailing" constant="30" id="TkE-ZK-Woc"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="OtF-Db-cw2" secondAttribute="bottom" constant="23" id="UAz-pu-BhN"/>
                                                 <constraint firstItem="VIE-WK-U7O" firstAttribute="top" secondItem="95X-oJ-1O9" secondAttribute="topMargin" constant="4" id="XyY-LG-OPE"/>
-                                                <constraint firstItem="U4c-Wv-seH" firstAttribute="leading" secondItem="OtF-Db-cw2" secondAttribute="trailing" constant="76" id="hAw-h5-w6I"/>
+                                                <constraint firstItem="U4c-Wv-seH" firstAttribute="leading" secondItem="OtF-Db-cw2" secondAttribute="trailing" constant="30" id="hAw-h5-w6I"/>
                                                 <constraint firstItem="WCr-LR-mwf" firstAttribute="top" secondItem="95X-oJ-1O9" secondAttribute="topMargin" constant="4" id="kV3-0a-M5l"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="WCr-LR-mwf" secondAttribute="trailing" constant="29" id="kw0-eZ-b9B"/>
                                                 <constraint firstItem="VIE-WK-U7O" firstAttribute="leading" secondItem="U4c-Wv-seH" secondAttribute="trailing" constant="33" id="pKL-st-ot8"/>
@@ -270,11 +270,11 @@
                                         <rect key="frame" x="0.0" y="98" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JJD-4d-Frn" id="OqK-RT-aS0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNO-UL-w3k">
-                                                    <rect key="frame" x="14" y="24" width="87" height="21"/>
+                                                    <rect key="frame" x="14" y="24" width="148" height="21"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -290,7 +290,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="jam-CI-o19" secondAttribute="trailing" constant="21" id="97V-nn-RVU"/>
                                                 <constraint firstItem="tNO-UL-w3k" firstAttribute="leading" secondItem="OqK-RT-aS0" secondAttribute="leadingMargin" constant="6" id="Ekt-UM-NPt"/>
                                                 <constraint firstItem="tNO-UL-w3k" firstAttribute="top" secondItem="OqK-RT-aS0" secondAttribute="topMargin" constant="16" id="Gkj-xd-Re0"/>
-                                                <constraint firstItem="jam-CI-o19" firstAttribute="leading" secondItem="tNO-UL-w3k" secondAttribute="trailing" constant="196" id="H7m-xt-XY5"/>
+                                                <constraint firstItem="jam-CI-o19" firstAttribute="leading" secondItem="tNO-UL-w3k" secondAttribute="trailing" constant="135" id="H7m-xt-XY5"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="tNO-UL-w3k" secondAttribute="bottom" constant="16" id="cZI-4i-Dvd"/>
                                                 <constraint firstItem="jam-CI-o19" firstAttribute="top" secondItem="OqK-RT-aS0" secondAttribute="topMargin" constant="11" id="f3U-mY-7em"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="jam-CI-o19" secondAttribute="bottom" constant="11" id="lib-2d-XL0"/>
@@ -327,7 +327,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="partialCurl" id="a3a-UR-Xl1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="KlA-Kt-Hsl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KlA-Kt-Hsl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
