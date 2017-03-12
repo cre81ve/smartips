@@ -18,6 +18,7 @@ extension Float {
 class HomeViewController: UIViewController,UITextFieldDelegate {
 
     
+    @IBOutlet weak var totalAmount: UILabel!
     @IBOutlet weak var service: UILabel!
     @IBOutlet weak var segmentControl: FUISegmentedControl!
     @IBOutlet weak var tipLabel: UILabel!
@@ -29,6 +30,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     
     var bill:Float = 0
     var tip:Float = 0
+    var total:Float = 0
     var currencySymbol:String = "$"
     var currencyCode:String = "USD"
     var tipPercent: Float = 15.0
@@ -43,6 +45,11 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         
         //styles
         reStyle()
+        let (storedBill,timeStored) = Store.billAmount();
+        let currentTime:Int = Int(floor(Date().timeIntervalSince1970))
+        if(timeStored != 0 && (currentTime - timeStored < 10*60*1000)) {
+            bill = storedBill
+        }
         
         billAmount.delegate = self
         billAmount.addTarget(self, action: #selector(HomeViewController.didBillValueChange), for: UIControlEvents.editingChanged)
@@ -60,7 +67,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
 
         //formatter
         formatter.numberStyle = .currency
-
+        billAmount.becomeFirstResponder()
         recalculateTip(fromTextField: false)
         
     }
@@ -119,6 +126,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
             bill = Float(billString)!
         }
         recalculateTip(fromTextField: true)
+        Store.storeBillAmount(amount: bill)
     }
 
     //After text value entry is done.
@@ -171,6 +179,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         }
         let tipToShow:Float = tip/Float(sharedBy)
         tipAmount.text = formatter.string(from: NSNumber(value:tipToShow))
+        totalAmount.text = formatter.string(from: NSNumber(value: billToShow+tipToShow))
     }
 
 }

@@ -15,7 +15,7 @@ class Store {
     static var service:String = "Waiters"
     static var segmentTip:[String] = ["15%","20%","30%"]
     static let sections: [String] = ["Settings", "Services"]
-    static let appSettings: [String] = ["Theme", "Save History"]
+    static let appSettings: [String] = ["Theme", "Save History" ,"Default Tip"]
     static let services: [String] = ["Waiters", "Bartenders", "Car Washers" ,"Delivery" ,"Hair Salon", "Nails/Spa" , "Movers", "Massage", "Room Service/House Keeping","Gardeners","Baby Sitters"]
 
     class func storeDefaultServiceDetails(serviceArg:String , serviceDetailArg:String , segmentTipArray:[String] ) {
@@ -24,6 +24,18 @@ class Store {
         segmentTip = segmentTipArray
     }
     
+    class func storeBillAmount(amount:Float) {
+        let defaults = UserDefaults.standard
+        defaults.set(amount, forKey: "billAmount")
+        let currentEpoch:Int = Int(floor(Date().timeIntervalSince1970 * 1000))
+        defaults.set(currentEpoch, forKey: "lastUpdated")
+    }
+    
+    
+    class func billAmount()->(Float,Int) {
+        let defaults = UserDefaults.standard
+        return (defaults.float(forKey: "billAmount"),defaults.integer(forKey: "lastUpdated"))
+    }
     
     class func setStyleColor(color:String) {
         let defaults = UserDefaults.standard
