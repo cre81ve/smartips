@@ -103,9 +103,22 @@ class HomeViewController: UIViewController,UITextFieldDelegate,UIGestureRecogniz
             self.service.alpha = 1.0
         })
         self.serviceDetail.backgroundColor = Styles.themeColor()
-        reStyle()
+
         recalculateTip(fromTextField: false)
         Styles.styleNav(controller: self)
+        self.billAmount.alpha = 0.7;
+        self.billAmount.borderStyle = UITextBorderStyle.roundedRect
+        
+        self.billAmount.borderColor = Styles.themeColor()
+        self.billAmount.borderWidth = 3.0
+//        let optionsFrame:CGRect = self.billAmount.frame;
+        
+        UIView.animate(withDuration: 2.0, delay: 0.3, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            self.billAmount.alpha=1;
+            self.billAmount.layer.borderWidth = 1
+            self.billAmount.layer.borderColor = Styles.themeColor().cgColor
+        })
+        reStyle()
     }
     
     func reStyle() {
