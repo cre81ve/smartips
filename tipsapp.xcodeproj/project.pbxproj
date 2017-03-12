@@ -23,6 +23,7 @@
 		43DFD7701E6893B30066CE36 /* TGPCamelLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DFD76C1E6893B30066CE36 /* TGPCamelLabels.swift */; };
 		43DFD7711E6893B30066CE36 /* TGPControlsTicksProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DFD76E1E6893B30066CE36 /* TGPControlsTicksProtocol.swift */; };
 		43DFD7721E6893B30066CE36 /* TGPDiscreteSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DFD76F1E6893B30066CE36 /* TGPDiscreteSlider.swift */; };
+		43FBD1E01E74CC0E00CFB6E4 /* DefaultTipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FBD1DF1E74CC0E00CFB6E4 /* DefaultTipCell.swift */; };
 		5182B6DBE262EE51AE3A4740 /* Pods_tipsapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D438E976E5CACE48F8E3B295 /* Pods_tipsapp.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		43DFD76D1E6893B30066CE36 /* TGPControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPControls.h; sourceTree = "<group>"; };
 		43DFD76E1E6893B30066CE36 /* TGPControlsTicksProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGPControlsTicksProtocol.swift; sourceTree = "<group>"; };
 		43DFD76F1E6893B30066CE36 /* TGPDiscreteSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGPDiscreteSlider.swift; sourceTree = "<group>"; };
+		43FBD1DF1E74CC0E00CFB6E4 /* DefaultTipCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTipCell.swift; sourceTree = "<group>"; };
 		4BA33C6953CCB8BC94BC208B /* Pods-tipsapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tipsapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-tipsapp/Pods-tipsapp.release.xcconfig"; sourceTree = "<group>"; };
 		D438E976E5CACE48F8E3B295 /* Pods_tipsapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tipsapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -134,6 +136,7 @@
 				436A9B941E6CAC4000CFFCD5 /* Styles.swift */,
 				436A9B9B1E6E6ACB00CFFCD5 /* SettingsCell.swift */,
 				436A9B9D1E6EB51B00CFFCD5 /* ShareCell.swift */,
+				43FBD1DF1E74CC0E00CFB6E4 /* DefaultTipCell.swift */,
 			);
 			name = uicontrols;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				436A9B951E6CAC4000CFFCD5 /* Styles.swift in Sources */,
 				43DFD73F1E67BC2F0066CE36 /* HomeViewController.swift in Sources */,
 				436A9B9A1E6D34D900CFFCD5 /* Store.swift in Sources */,
+				43FBD1E01E74CC0E00CFB6E4 /* DefaultTipCell.swift in Sources */,
 				436A9B9C1E6E6ACB00CFFCD5 /* SettingsCell.swift in Sources */,
 				43DFD76B1E688CC70066CE36 /* PersonSlider.swift in Sources */,
 				43DFD7721E6893B30066CE36 /* TGPDiscreteSlider.swift in Sources */,

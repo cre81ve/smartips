@@ -11,21 +11,34 @@ import UIKit
 
 class Store {
     
+    
     static var serviceDetail:String! = "Typical Waiters around 15 - 30 % is the norm   pre - tax bill. Well !! game theory says tip , only if you prefer to come back. (You ll come back if you like it , and obviously you ll tip)"
+    static let defaults = UserDefaults.standard
     static var service:String = "Waiters"
     static var segmentTip:[String] = ["15%","20%","30%"]
     static let sections: [String] = ["Settings", "Services"]
     static let appSettings: [String] = ["Theme", "Save History" ,"Default Tip"]
     static let services: [String] = ["Waiters", "Bartenders", "Car Washers" ,"Delivery" ,"Hair Salon", "Nails/Spa" , "Movers", "Massage", "Room Service/House Keeping","Gardeners","Baby Sitters"]
+    
+    class func getService()-> String {
+        let serv:String! = defaults.string(forKey: "storedService")
+        if(serv != nil) {
+            return serv
+        }
+        return "Waiters"
+    }
 
+
+    
     class func storeDefaultServiceDetails(serviceArg:String , serviceDetailArg:String , segmentTipArray:[String] ) {
         serviceDetail = serviceDetailArg
         service = serviceArg
         segmentTip = segmentTipArray
+        
+        defaults.set(service, forKey: "storedService");
     }
     
     class func storeBillAmount(amount:Float) {
-        let defaults = UserDefaults.standard
         defaults.set(amount, forKey: "billAmount")
         let currentEpoch:Int = Int(floor(Date().timeIntervalSince1970 * 1000))
         defaults.set(currentEpoch, forKey: "lastUpdated")
@@ -33,7 +46,6 @@ class Store {
     
     
     class func billAmount()->(Float,Int) {
-        let defaults = UserDefaults.standard
         return (defaults.float(forKey: "billAmount"),defaults.integer(forKey: "lastUpdated"))
     }
     
@@ -43,7 +55,7 @@ class Store {
     }
     
     class func styleColor()->UIColor {
-        let defaults = UserDefaults.standard
+        
         let color:String! = defaults.string(forKey: "styleColor")
         if(color != nil) {
             switch color {
@@ -59,5 +71,12 @@ class Store {
         
     }
     
+    class func storeDefaultTipe(defaultTip:Float) {
+        defaults.set(defaultTip, forKey: "defaultTip");
+    }
+    
+    class func defaultTip()->Float {
+        return defaults.float(forKey: "defaultTip")
+    }
     
 }

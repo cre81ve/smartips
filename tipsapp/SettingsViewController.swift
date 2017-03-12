@@ -8,15 +8,14 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource {
+class SettingsViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource ,UITextFieldDelegate {
 
     @IBOutlet weak var settingsTable: UITableView!
-//    let s3Data: [String] = ["Row 1", "Row 2", "Row 3"]
-    
+    @IBOutlet weak var defaultTipPercent: UITextField!
+
     var sectionData: [Int: [String]] = [:]
     var serviceAndTips: [String:[String]] = [:]
     var serviceAndDescriptions: [String:String] = [:]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsTable.delegate  = self
@@ -39,9 +38,6 @@ class SettingsViewController: UIViewController ,UITableViewDelegate,UITableViewD
         for service in Store.services {
             serviceAndDescriptions[service] = "Typical \(service) around [ \((serviceAndTips[service]?[0] )!) - \((serviceAndTips[service]?[2])!) ] is the norm   pre - tax bill. Well !! game theory says tip , only if you prefer to come back. (You ll come back if you like it , and you ll tip) "
         }
-        
-        let indexPath:IndexPath = IndexPath(row: 2, section: 1)
-        settingsTable.selectRow(at: indexPath, animated: true, scrollPosition: UITableViewScrollPosition.bottom)
         self.settingsTable.rowHeight = UITableViewAutomaticDimension;
         self.settingsTable.estimatedRowHeight = 44.0
 
@@ -49,6 +45,24 @@ class SettingsViewController: UIViewController ,UITableViewDelegate,UITableViewD
 
     override func viewDidAppear(_ animated: Bool) {
         Styles.styleNav(controller: self)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if(indexPath.section == 1) {
+            selectRow(cell:cell,indexPath:indexPath )
+        }
+    }
+    
+    
+    func selectRow(cell:UITableViewCell , indexPath:IndexPath) {
+        let indexes:[Int] = Store.services.enumerated().filter {
+            $0.element.contains(Store.service)
+            }.map{$0.offset}
+        if(indexPath.row == indexes[0]) {
+            cell.setSelected(true, animated: false)
+            settingsTable.selectRow(at: indexPath, animated: true, scrollPosition: UITableViewScrollPosition.none)
+        }
+        
     }
     
     func sortFunc(num1: Int, num2: Int) -> Bool {
@@ -77,7 +91,12 @@ class SettingsViewController: UIViewController ,UITableViewDelegate,UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedService:String = Store.services[indexPath.item]
-        Store.storeDefaultServiceDetails(serviceArg: selectedService, serviceDetailArg: serviceAndDescriptions[selectedService]!, segmentTipArray: serviceAndTips[selectedService]!)
+        
+        if(indexPath.section == 1) {
+            Store.storeDefaultServiceDetails(serviceArg: selectedService, serviceDetailArg: serviceAndDescriptions[selectedService]!, segmentTipArray: serviceAndTips[selectedService]!)
+            
+        }
+            tipPercentChanged(fromtext: false)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -85,13 +104,6 @@ class SettingsViewController: UIViewController ,UITableViewDelegate,UITableViewD
     }
     
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if(indexPath.section == 0) {
-//         return 46
-//        }
-//        return  40
-//    }
-//    
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header:UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         header.textLabel?.font = UIFont(name: "Avenir Next", size: 18)
@@ -99,6 +111,10 @@ class SettingsViewController: UIViewController ,UITableViewDelegate,UITableViewD
         view.tintColor = Styles.themeColor()
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.keyboardAppearance = UIKeyboardAppearance.alert
+    }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
         -> UITableViewCell {
@@ -112,7 +128,17 @@ class SettingsViewController: UIViewController ,UITableViewDelegate,UITableViewD
                 if(indexPath.row == 1) {
                      cell = tableView.dequeueReusableCell(withIdentifier: "savecell") as! ShareCell
                 }
+                if(indexPath.row == 2 ){
+                    cell = tableView.dequeueReusableCell(withIdentifier: "defaulttipcell") as! DefaultTipCell
+                    let dCell:DefaultTipCell  = cell as! DefaultTipCell
+                    defaultTipPercent = dCell.defaultTipPercent
+                    dCell.defaultTipPercent.text! = String(Int(Store.defaultTip()))
+                    dCell.defaultTipPercent.delegate = self
+                    dCell.defaultTipPercent.addTarget(self, action: #selector(SettingsViewController.didTipPercentChange), for: UIControlEvents.editingChanged)
+
+                }
               cell.selectionStyle = UITableViewCellSelectionStyle.none
+              cell.accessoryType = UITableViewCellAccessoryType.none
 
             }else{
                 cell.textLabel?.text = sectionData[indexPath.section]![indexPath.row]
@@ -125,6 +151,32 @@ class SettingsViewController: UIViewController ,UITableViewDelegate,UITableViewD
             return cell
     }
     
+    
+    func didTipPercentChange() {
+        
+        tipPercentChanged(fromtext:true)
+    }
+
+    
+    //After text value entry is done.
+    func tipPercentChanged(fromtext: Bool) {
+        if(!fromtext){
+            view.endEditing(true)
+        }
+        var percentString : String = defaultTipPercent.text!
+        if(percentString != "") {
+            percentString = percentString.replacingOccurrences(of: ",", with: "")
+            percentString = percentString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            let tipPercent:Float = Float(percentString)!
+            Store.storeDefaultTipe(defaultTip: tipPercent)
+        }
+    }
+    
+    //Touch up anywhere in view
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     /*
     // MARK: - Navigation

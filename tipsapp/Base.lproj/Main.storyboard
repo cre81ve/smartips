@@ -330,6 +330,47 @@
                                             <outlet property="saveSwitch" destination="jam-CI-o19" id="5xy-Na-Wd9"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="defaulttipcell" id="RGz-sv-cFZ" customClass="DefaultTipCell" customModule="tipsapp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="168" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RGz-sv-cFZ" id="j6R-A6-GuR">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tip %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H39-Je-91p">
+                                                    <rect key="frame" x="17" y="24" width="158" height="22"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M7a-jY-Alg">
+                                                    <rect key="frame" x="298" y="19" width="44" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="E8S-WS-cwS"/>
+                                                        <constraint firstAttribute="width" constant="44" id="Wyi-70-F5B"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="didValueChange:" destination="RGz-sv-cFZ" eventType="valueChanged" id="nbr-ax-AeV"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="M7a-jY-Alg" firstAttribute="leading" secondItem="H39-Je-91p" secondAttribute="trailing" constant="123" id="15R-bn-3EW"/>
+                                                <constraint firstItem="H39-Je-91p" firstAttribute="top" secondItem="j6R-A6-GuR" secondAttribute="topMargin" constant="16" id="A5w-ih-077"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="M7a-jY-Alg" secondAttribute="trailing" constant="25" id="OkB-eS-DQd"/>
+                                                <constraint firstItem="H39-Je-91p" firstAttribute="leading" secondItem="j6R-A6-GuR" secondAttribute="leadingMargin" constant="9" id="PAw-uk-vVM"/>
+                                                <constraint firstItem="M7a-jY-Alg" firstAttribute="top" secondItem="j6R-A6-GuR" secondAttribute="topMargin" constant="11" id="T9p-xE-JlR"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="H39-Je-91p" secondAttribute="bottom" constant="16" id="UBo-r0-PR3"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="M7a-jY-Alg" secondAttribute="bottom" constant="12" id="mXU-BY-W7p"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="defaultTipPercent" destination="M7a-jY-Alg" id="DAD-Pf-TRB"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>

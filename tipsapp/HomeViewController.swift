@@ -15,7 +15,7 @@ extension Float {
     }
 }
 
-class HomeViewController: UIViewController,UITextFieldDelegate {
+class HomeViewController: UIViewController,UITextFieldDelegate,UIGestureRecognizerDelegate {
 
     
     @IBOutlet weak var totalAmount: UILabel!
@@ -74,17 +74,25 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     
     
     
-    
     override func viewDidAppear(_ animated: Bool) {
+
+        var tipPercentVar:String =  Store.segmentTip[1]
+        tipPercentVar =  tipPercentVar.substring(to: tipPercentVar.index(before: tipPercentVar.endIndex))
+        if(Store.service == "Waiters") {
+            tipPercent = Store.defaultTip()
+            tipPercentVar = "\(Int(tipPercent))"
+        }else{
+            tipPercent = Float(tipPercentVar)!
+        }
+        
+        Store.segmentTip[1] = "\(tipPercentVar)%"
 
         segmentControl.removeAllSegments()
         segmentControl.insertSegment(withTitle: Store.segmentTip[0], at: 0, animated: true)
         segmentControl.insertSegment(withTitle: Store.segmentTip[1], at: 1, animated: true)
         segmentControl.insertSegment(withTitle: Store.segmentTip[2], at: 2, animated: true)
         segmentControl.selectedSegmentIndex = 1
-        var tipPercentVar:String =  Store.segmentTip[1]
-        tipPercentVar =  tipPercentVar.substring(to: tipPercentVar.index(before: tipPercentVar.endIndex))
-        tipPercent = Float(tipPercentVar)!
+        
         service.text = Store.service
         serviceDetail.text = Store.serviceDetail
 
