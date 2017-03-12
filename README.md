@@ -33,7 +33,7 @@ The following **optional and additional ** features are implemented
 
 Heres a walkthrough of implemented user stories:
 
-![](https://github.com/cre81ve/smartips/blob/master/tips.gif)
+![](https://github.com/cre81ve/smartips/blob/master/tips1.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
